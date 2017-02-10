@@ -1,3 +1,40 @@
+/* Настройка кнопки "Наверх" */
+
+
+.button_to_top {
+    /*display: none; */
+    z-index: 9999; 
+    position: fixed; 
+    /*bottom: 2em; */
+    top: 2em;
+    right: 2em; 
+    width: 3em; 
+    height: 3em;
+    background-color: #666;
+    text-align: center;
+    opacity: 0;
+    transition-duration: 400ms;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    cursor: default;
+}
+
+.button_to_top.show {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.button_to_top i {
+	margin-top: 0.15em; 
+    color: #fff;
+}
+
+.button_to_top.show:hover { 
+    background-color: #333;
+    /*opacity: 0.75;*/
+}
+
+
+
 
 /* Настройка виджета "Вход/Выход" */
 

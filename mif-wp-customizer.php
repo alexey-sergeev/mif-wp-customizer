@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 include_once dirname( __FILE__ ) . '/inc/login-logout-menu.php';
 include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
+include_once dirname( __FILE__ ) . '/inc/button-to-top.php';
 // include_once dirname( __FILE__ ) . '/inc/cyrillic-to-latin.php';
 
 
@@ -34,6 +35,9 @@ function mif_wpc_options( $key )
             $ret = true;
             break;
         case 'mif_wpc_user_login_widget':
+            $ret = true;
+            break;
+        case 'mif_wpc_button_to_top':
             $ret = true;
             break;
         // case 'mif_wpc_cyrillic_to_latin':
@@ -59,6 +63,9 @@ function mif_wp_customizer_styles()
 {
 	wp_register_style( 'mif-wp-customizer-styles', plugins_url( 'mif-wp-customizer-styles.css', __FILE__ ) );
 	wp_enqueue_style( 'mif-wp-customizer-styles' );
+
+	wp_register_style( 'font-awesome', plugins_url( '/css/font-awesome.min.css', __FILE__ ) );
+	wp_enqueue_style( 'font-awesome' );
 }
 
 
