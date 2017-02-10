@@ -1,0 +1,28 @@
+
+/* Настройка виджета "Вход/Выход" */
+
+.mif_wpc_user_login_widget.logged-in img.avatar {
+    width: 50px;
+    height: auto;
+    float: left;
+}
+
+.mif_wpc_user_login_widget.logged-in h4 {
+    margin-bottom: 0.5em;
+}
+
+.mif_wpc_user_login_widget.logged-in div {
+    margin-left: 65px;
+}
+
+.mif_wpc_user_login_widget.logged-in a, .mif_wpc_user_login_widget.logged-in a:hover {
+    color: #303133;
+}
+
+.mif_wpc_user_login_widget.logged-in a.logout {
+    font-size: 95%;
+}
+
+.mif_wpc_user_login_widget.logged-in a.username {
+    font-size: 105%;
+}
