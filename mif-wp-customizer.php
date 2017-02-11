@@ -16,6 +16,8 @@ defined( 'ABSPATH' ) || exit;
 include_once dirname( __FILE__ ) . '/inc/login-logout-menu.php';
 include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
 include_once dirname( __FILE__ ) . '/inc/button-to-top.php';
+include_once dirname( __FILE__ ) . '/inc/admin-settings-page.php';
+include_once dirname( __FILE__ ) . '/inc/join-to-multisite.php';
 // include_once dirname( __FILE__ ) . '/inc/cyrillic-to-latin.php';
 
 
@@ -23,33 +25,46 @@ include_once dirname( __FILE__ ) . '/inc/button-to-top.php';
 
 
 // 
-// Настройка опций
+// Проверка опций
 // 
 // 
 
 function mif_wpc_options( $key )
 {
-    
-    switch ( $key ) {
-        case 'mif_wpc_login_logout_menu':
-            $ret = true;
-            break;
-        case 'mif_wpc_user_login_widget':
-            $ret = true;
-            break;
-        case 'mif_wpc_button_to_top':
-            $ret = true;
-            break;
-        // case 'mif_wpc_cyrillic_to_latin':
-        //     $ret = true;
-        //     break;
-        default:
-            $ret = false;
-            break;
-    }
+    $ret = false;
+    $args = get_mif_wpc_options();
+
+    if ( isset( $args[$key] ) ) $ret = $args[$key];
 
     return $ret;
 }  
+
+// 
+// Получить опции
+// 
+// 
+
+function get_mif_wpc_options()
+{
+    $default = array(
+                'button-to-top' => false,
+                'login-logout-menu' => true,
+                'login-logout-widget' => true,
+                'join-to-multisite' => true,
+                'join-to-multisite-default-role' => 'subscriber',
+                'join-to-multisite-mode' => 'manual',
+            );
+
+    foreach ( $default as $key => $value ) $args[$key] = get_option( $key, $default[$key] );
+
+    if ( ! is_multisite() ) {
+        $args['join-to-multisite'] = false;
+    }
+
+    return $args;
+}
+
+
 
 
 //

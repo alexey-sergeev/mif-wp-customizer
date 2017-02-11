@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 
-if ( mif_wpc_options( 'mif_wpc_login_logout_menu' ) ) 
+if ( mif_wpc_options( 'login-logout-widget' ) ) 
     add_action( 'widgets_init', 'mif_wpc_user_login_widget_init' );
 
 function mif_wpc_user_login_widget_init() 
@@ -61,11 +61,13 @@ class mif_wpc_user_login_widget extends WP_Widget {
             $user_link = ( function_exists( 'bp_core_get_user_domain' ) ) ? bp_core_get_user_domain( $current_user->ID ) : $current_user->user_url;
             if ( empty( $user_link ) ) $user_link = get_option('siteurl') . '/wp-admin/profile.php';
 
+            $url = ( is_page() || is_single() ) ? get_permalink() : home_url();
+
             $out .= '<div class="mif_wpc_user_login_widget widget logged-in">
                     <a href="' . $user_link . '">' . $avatar . '</a>
                     <div>
                     <h4><a href="' . $user_link . '" class="username">' . $user_name . '</a></h4>
-                    <a href="' . wp_logout_url( get_permalink() ) . '" class="logout">' . __( 'Выйти', 'mif-wp-customizer' ) . ' &rarr;</a></h4>
+                    <a href="' . wp_logout_url( $url ) . '" class="logout">' . __( 'Выйти', 'mif-wp-customizer' ) . ' &rarr;</a>
                     </div> 
                     </div>';
 
@@ -110,14 +112,14 @@ class mif_wpc_user_login_widget extends WP_Widget {
 
 
 
-	public function update( $new_instance, $old_instance ) 
+	public function update( $new_data, $old_data ) 
     {
-		$instance             = $old_instance;
-		$instance['title']    = strip_tags( $new_instance['title'] );
-		$instance['register'] = esc_url( $new_instance['register'] );
-		$instance['lostpass'] = esc_url( $new_instance['lostpass'] );
+		$data = $old_data;
+		$data['title'] = strip_tags( $new_data['title'] );
+		$data['register'] = esc_url( $new_data['register'] );
+		$data['lostpass'] = esc_url( $new_data['lostpass'] );
 
-		return $instance;
+		return $data;
 	}
 
 
@@ -137,3 +139,4 @@ class mif_wpc_user_login_widget extends WP_Widget {
     }
 }
 
+?>

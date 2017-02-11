@@ -33,33 +33,88 @@
     /*opacity: 0.75;*/
 }
 
+@media only screen and (max-width: 860px) {
+
+.button_to_top {
+    display: none; 
+}
+
+}
 
 
+/* Настройка виджетов "Вход/Выход", "Статус участника сайта */
 
-/* Настройка виджета "Вход/Выход" */
-
-.mif_wpc_user_login_widget.logged-in img.avatar {
+.mif_wpc_user_login_widget.logged-in img.avatar,
+.mif_wpc_join_to_multisite_widget img.avatar {
     width: 50px;
     height: auto;
     float: left;
 }
 
-.mif_wpc_user_login_widget.logged-in h4 {
+.mif_wpc_user_login_widget.logged-in h4,
+.mif_wpc_join_to_multisite_widget h4 {
     margin-bottom: 0.5em;
 }
 
-.mif_wpc_user_login_widget.logged-in div {
+.mif_wpc_user_login_widget.logged-in div,
+.mif_wpc_join_to_multisite_widget div {
     margin-left: 65px;
 }
 
-.mif_wpc_user_login_widget.logged-in a, .mif_wpc_user_login_widget.logged-in a:hover {
+.mif_wpc_user_login_widget.logged-in a, 
+.mif_wpc_user_login_widget.logged-in a:hover,
+.mif_wpc_join_to_multisite_widget a,
+.mif_wpc_join_to_multisite_widget a:hover
+ {
     color: #303133;
 }
 
-.mif_wpc_user_login_widget.logged-in a.logout {
+.mif_wpc_user_login_widget.logged-in a.logout,
+.mif_wpc_join_to_multisite_widget a.logout {
     font-size: 95%;
 }
 
-.mif_wpc_user_login_widget.logged-in a.username {
+.mif_wpc_user_login_widget.logged-in a.username,
+.mif_wpc_join_to_multisite_widget a.username {
     font-size: 105%;
+}
+
+
+
+/* Настройка страницы настройки */
+
+
+.settings_page_mif-wp-customizer table td.one {
+    width: 20%;
+}
+
+.settings_page_mif-wp-customizer table td, .settings_page_mif-wp-customizer table th {
+    vertical-align: top;
+    padding: 8px 8px 24px 8px;
+}
+
+.settings_page_mif-wp-customizer table td label {
+    vertical-align: top;
+}
+
+
+/* Диалоговые окна */
+
+.note, .err, .wrn {
+    width: 80%;
+    padding: 2em;
+    margin: 1em 0;
+    background-color: #eee;
+}
+
+.note {
+    border-left: 4px solid #009000;
+}
+
+.wrn {
+    border-left: 4px solid #FFBA00;
+}
+
+.err {
+    border-left: 4px solid #FF0000;
 }

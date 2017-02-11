@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 //
 //
 
-if ( mif_wpc_options( 'mif_wpc_login_logout_menu' ) ) 
+if ( mif_wpc_options( 'login-logout-menu' ) ) 
     add_action( 'admin_head-nav-menus.php', 'mif_wpc_login_logout_menu_metabox_register' );
 
 function mif_wpc_login_logout_menu_metabox_register() 
@@ -77,7 +77,7 @@ function mif_wpc_login_logout_menu_metabox_render( $object )
 //
 //
 
-if ( mif_wpc_options( 'mif_wpc_login_logout_menu' ) ) 
+if ( mif_wpc_options( 'login-logout-menu' ) ) 
     add_filter( 'wp_get_nav_menu_items', 'mif_wpc_login_logout_menu_metabox_links', 10, 3 );
  
 function mif_wpc_login_logout_menu_metabox_links( $items, $menu, $args ) 
