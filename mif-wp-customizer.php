@@ -18,6 +18,7 @@ include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
 include_once dirname( __FILE__ ) . '/inc/button-to-top.php';
 include_once dirname( __FILE__ ) . '/inc/admin-settings-page.php';
 include_once dirname( __FILE__ ) . '/inc/join-to-multisite.php';
+include_once dirname( __FILE__ ) . '/inc/shortcodes.php';
 // include_once dirname( __FILE__ ) . '/inc/cyrillic-to-latin.php';
 
 
@@ -51,6 +52,7 @@ function get_mif_wpc_options()
                 'login-logout-menu' => true,
                 'login-logout-widget' => true,
                 'join-to-multisite' => true,
+                'mif-wpc-shortcodes' => true,
                 'join-to-multisite-default-role' => 'subscriber',
                 'join-to-multisite-mode' => 'manual',
             );

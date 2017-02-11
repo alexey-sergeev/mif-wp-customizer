@@ -58,6 +58,11 @@ class mif_wpc_console_settings_page {
                 <td><input type="checkbox"' . $chk['button-to-top'] . ' value = "yes" name="button-to-top" id="button-to-top"></td>
                 <td><label for="user_pass" for="button-to-top">' . __( 'Показывать кнопку «Наверх». Кнопка включается при пролистывании страницы вниз и позволяет быстро вернуться на начало.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
+        $out .= '<tr>
+                <th>' . __( 'Шорткоды', 'mif-wp-customizer' ) . '</th>
+                <td><input type="checkbox"' . $chk['mif-wpc-shortcodes'] . ' value = "yes" name="mif-wpc-shortcodes" id="mif-wpc-shortcodes"></td>
+                <td><label for="user_pass" for="mif-wpc-shortcodes">' . __( 'Разрешить использовать шорткоды (redirect).', 'mif-wp-customizer' ) . '</label></td>
+                </tr>';
         $out .= '</table>';
 
         if ( is_multisite() ) {
