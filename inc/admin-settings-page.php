@@ -58,11 +58,20 @@ class mif_wpc_console_settings_page {
                 <td><input type="checkbox"' . $chk['button-to-top'] . ' value = "yes" name="button-to-top" id="button-to-top"></td>
                 <td><label for="user_pass" for="button-to-top">' . __( 'Показывать кнопку «Наверх». Кнопка включается при пролистывании страницы вниз и позволяет быстро вернуться на начало.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
+        $out .= '</table>';
+
+        $out .= '<h2>' . __( 'Поведение сайта', 'mif-wp-customizer' ) . '</h2>';
+        $out .= '<table class="form-table">';
         $out .= '<tr>
                 <th>' . __( 'Шорткоды', 'mif-wp-customizer' ) . '</th>
                 <td><input type="checkbox"' . $chk['mif-wpc-shortcodes'] . ' value = "yes" name="mif-wpc-shortcodes" id="mif-wpc-shortcodes"></td>
                 <td><label for="user_pass" for="mif-wpc-shortcodes">' . __( 'Разрешить использовать шорткоды (redirect).', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
+        // $out .= '<tr>
+        //         <th>' . __( 'MIME типы', 'mif-wp-customizer' ) . '</th>
+        //         <td><input type="checkbox"' . $chk['mif-wpc-mime-types'] . ' value = "yes" name="mif-wpc-mime-types" id="mif-wpc-mime-types"></td>
+        //         <td><label for="user_pass" for="mif-wpc-mime-types">' . __( 'Разрешить добавление пользовательских MIME типов.', 'mif-wp-customizer' ) . '</label></td>
+        //         </tr>';
         $out .= '</table>';
 
         if ( is_multisite() ) {
@@ -96,13 +105,12 @@ class mif_wpc_console_settings_page {
         if ( ! wp_verify_nonce( $_POST['_wpnonce'], "mif-wpc-admin-settings-page-nonce" ) ) return '<div class="err">' . __( 'Ошибка авторизации', 'mif-wp-customizer' ) . '</div>';
 
         $args = get_mif_wpc_options();
-
         foreach ( $args as $key => $value ) {
             
             if ( isset($_POST[$key]) ) {
-                $new_value = ( $_POST[$key] == 'yes' ) ? true : $_POST[$key];
+                $new_value = ( $_POST[$key] == 'yes' ) ? 1 : $_POST[$key];
             } else {
-                $new_value = false;    
+                $new_value = 0;    
             }
             
             update_option( $key, $new_value );
