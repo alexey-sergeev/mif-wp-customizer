@@ -90,11 +90,15 @@
 
 .settings_page_mif-wp-customizer table td, .settings_page_mif-wp-customizer table th {
     vertical-align: top;
-    padding: 8px 8px 24px 8px;
+    padding: 8px 8px 24px 0px;
 }
 
 .settings_page_mif-wp-customizer table td label {
     vertical-align: top;
+}
+
+.settings_page_mif-wp-customizer table td h2 {
+    margin-bottom: 0;
 }
 
 

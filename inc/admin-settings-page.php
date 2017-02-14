@@ -41,8 +41,10 @@ class mif_wpc_console_settings_page {
         $select_user_role = mif_wpc_wp_dropdown_roles( $args['join-to-multisite-default-role'] );
 
         $out .= '<form method="POST">';
-        $out .= '<h2>' . __( 'Визуальные элементы', 'mif-wp-customizer' ) . '</h2>';
         $out .= '<table class="form-table">';
+        $out .= '<tr><td colspan="3">';
+        $out .= '<h2>' . __( 'Визуальные элементы', 'mif-wp-customizer' ) . '</h2>';
+        $out .= '</td></tr>';
         $out .= '<tr>
                 <th class="one">' . __( 'Меню «Войти/Выйти»', 'mif-wp-customizer' ) . '</th>
                 <td class="two"><input type="checkbox"' . $chk['login-logout-menu'] . ' value = "yes" name="login-logout-menu" id="login-logout-menu"></td>
@@ -54,14 +56,18 @@ class mif_wpc_console_settings_page {
                 <td><label for="login-logout-widget">' . __( 'Разрешить использовать виджет авторизации. В зависимости от текущего статуса авторизации пользователя виджет отображает форму авторизации, либо аватар и имя пользователя.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
         $out .= '<tr>
+                <th>' . __( 'Виджет участников сайта', 'mif-wp-customizer' ) . '</th>
+                <td><input type="checkbox"' . $chk['members-widget'] . ' value = "yes" name="members-widget" id="members-widget"></td>
+                <td><label for="members-widget">' . __( 'Разрешить использовать виджет участников сайта. Показывает аватрки участников в области виджетов.', 'mif-wp-customizer' ) . '</label></td>
+                </tr>';
+        $out .= '<tr>
                 <th>' . __( 'Кнопка «Наверх»', 'mif-wp-customizer' ) . '</th>
                 <td><input type="checkbox"' . $chk['button-to-top'] . ' value = "yes" name="button-to-top" id="button-to-top"></td>
                 <td><label for="user_pass" for="button-to-top">' . __( 'Показывать кнопку «Наверх». Кнопка включается при пролистывании страницы вниз и позволяет быстро вернуться на начало.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
-        $out .= '</table>';
-
+        $out .= '<tr><td colspan="3">';
         $out .= '<h2>' . __( 'Поведение сайта', 'mif-wp-customizer' ) . '</h2>';
-        $out .= '<table class="form-table">';
+        $out .= '</td></tr>';
         $out .= '<tr>
                 <th>' . __( 'Шорткоды', 'mif-wp-customizer' ) . '</th>
                 <td><input type="checkbox"' . $chk['mif-wpc-shortcodes'] . ' value = "yes" name="mif-wpc-shortcodes" id="mif-wpc-shortcodes"></td>
@@ -72,12 +78,12 @@ class mif_wpc_console_settings_page {
         //         <td><input type="checkbox"' . $chk['mif-wpc-mime-types'] . ' value = "yes" name="mif-wpc-mime-types" id="mif-wpc-mime-types"></td>
         //         <td><label for="user_pass" for="mif-wpc-mime-types">' . __( 'Разрешить добавление пользовательских MIME типов.', 'mif-wp-customizer' ) . '</label></td>
         //         </tr>';
-        $out .= '</table>';
 
         if ( is_multisite() ) {
 
+            $out .= '<tr><td colspan="3">';
             $out .= '<h2>' . __( 'Новые элементы для WordPress Multisite', 'mif-wp-customizer' ) . '</h2>';
-            $out .= '<table class="form-table">';
+            $out .= '</td></tr>';
             $out .= '<tr>
                     <th>' . __( 'Статус участника сайта', 'mif-wp-customizer' ) . '</th>
                     <td><input type="checkbox"' . $chk['join-to-multisite'] . ' value = "yes" name="join-to-multisite" id="join-to-multisite"></td>
@@ -85,15 +91,19 @@ class mif_wpc_console_settings_page {
                     <p><label><input type="radio" name="join-to-multisite-mode"' . $chk_jtm_mm['none'] . ' value="none"> ' . __( 'Не разрешать изменять статус (только просмотр)', 'mif-wp-customizer' ) . '</label>
                     <p><label><input type="radio" name="join-to-multisite-mode"' . $chk_jtm_mm['manual'] . ' value="manual"> ' . __( 'Ручное изменение статуса (кнопки "Стать участником", "Покинуть сайт")', 'mif-wp-customizer' ) . '</label>
                     <p><label><input type="radio" name="join-to-multisite-mode"' . $chk_jtm_mm['automatic'] . ' value="automatic"> ' . __( 'Автоматическое и ручное изменение статуса (кнопки, а также автоматическая запись участником при размещении комментариев или записей)', 'mif-wp-customizer' ) . '</label>
-                    <p>Статус пользователя по умолчанию <select name="join-to-multisite-default-role">' . $select_user_role . '</select>
+                    <p>Статус пользователя по умолчанию: <select name="join-to-multisite-default-role">' . $select_user_role . '</select>
                     </td>
                     </tr>';
-            $out .= '</table>';
 
         }
+        
 
+        $out .= '<tr><td colspan="3">';
         $out .= wp_nonce_field( "mif-wpc-admin-settings-page-nonce", "_wpnonce", true, false );
         $out .= '<p><input type="submit" class="button button-primary" name="update-mif-wpc-settings" value="' . __( 'Сохранить изменения', 'mif-wp-customizer' ) . '">';
+        $out .= '</td></tr>';
+
+        $out .= '</table>';
         $out .= '</form>';
 
         echo $out;

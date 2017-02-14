@@ -14,11 +14,14 @@
 defined( 'ABSPATH' ) || exit;
 
 include_once dirname( __FILE__ ) . '/inc/login-logout-menu.php';
-include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
 include_once dirname( __FILE__ ) . '/inc/button-to-top.php';
 include_once dirname( __FILE__ ) . '/inc/admin-settings-page.php';
 include_once dirname( __FILE__ ) . '/inc/join-to-multisite.php';
 include_once dirname( __FILE__ ) . '/inc/shortcodes.php';
+
+include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
+include_once dirname( __FILE__ ) . '/inc/members-widget.php';
+
 // include_once dirname( __FILE__ ) . '/inc/mime-types.php';
 // include_once dirname( __FILE__ ) . '/inc/cyrillic-to-latin.php';
 
@@ -51,10 +54,11 @@ function get_mif_wpc_options()
     $default = array(
                 'button-to-top' => false,
                 'login-logout-menu' => true,
-                'login-logout-widget' => true,
                 'join-to-multisite' => true,
                 'mif-wpc-shortcodes' => true,
                 'mif-wpc-mime-types' => true,
+                'login-logout-widget' => true,
+                'members-widget' => true,
                 'join-to-multisite-default-role' => 'subscriber',
                 'join-to-multisite-mode' => 'manual',
             );
@@ -87,6 +91,27 @@ function mif_wp_customizer_styles()
 	wp_enqueue_style( 'font-awesome' );
 }
 
+
+
+//
+// Проверка наличия BuddyPress
+//
+//
+
+if ( ! function_exists('is_active_buddypress') ) {
+
+    function is_active_buddypress()
+    {
+
+
+        if ( function_exists('bp_get_version') ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+}
 
 
 ?>

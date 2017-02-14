@@ -49,7 +49,7 @@ class mif_wpc_user_login_widget extends WP_Widget {
         
         $out .= $before_widget;
 
-		$title = apply_filters( 'mif_wpc_user_login_widget_title',    $data['title']    );
+		$title = apply_filters( 'mif_wpc_user_login_widget_title', $data['title'] );
 		if ( ! empty( $title ) ) $out .= $before_title . $title . $after_title;
 
         if ( is_user_logged_in() ) {
@@ -116,8 +116,8 @@ class mif_wpc_user_login_widget extends WP_Widget {
     {
 		$data = $old_data;
 		$data['title'] = strip_tags( $new_data['title'] );
-		$data['register'] = esc_url( $new_data['register'] );
-		$data['lostpass'] = esc_url( $new_data['lostpass'] );
+		// $data['register'] = esc_url( $new_data['register'] );
+		// $data['lostpass'] = esc_url( $new_data['lostpass'] );
 
 		return $data;
 	}
@@ -127,8 +127,8 @@ class mif_wpc_user_login_widget extends WP_Widget {
 	public function form( $data ) 
     {
 		$title = ( ! empty( $data['title'] ) ) ? esc_attr( $data['title'] ) : '';
-		$register = ( ! empty( $data['register'] ) ) ? esc_attr( $data['register'] ) : '';
-		$lostpass = ( ! empty( $data['lostpass'] ) ) ? esc_attr( $data['lostpass'] ) : '';
+		// $register = ( ! empty( $data['register'] ) ) ? esc_attr( $data['register'] ) : '';
+		// $lostpass = ( ! empty( $data['lostpass'] ) ) ? esc_attr( $data['lostpass'] ) : '';
 
         $out = '';
 
