@@ -55,15 +55,20 @@ class mif_wpc_console_settings_page {
                 <td><input type="checkbox"' . $chk['login-logout-widget'] . ' value = "yes" name="login-logout-widget" id="login-logout-widget"></td>
                 <td><label for="login-logout-widget">' . __( 'Разрешить использовать виджет авторизации. В зависимости от текущего статуса авторизации пользователя виджет отображает форму авторизации, либо аватар и имя пользователя.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
-        $out .= '<tr>
-                <th>' . __( 'Виджет участников сайта', 'mif-wp-customizer' ) . '</th>
-                <td><input type="checkbox"' . $chk['members-widget'] . ' value = "yes" name="members-widget" id="members-widget"></td>
-                <td><label for="members-widget">' . __( 'Разрешить использовать виджет участников сайта. Показывает аватрки участников в области виджетов.', 'mif-wp-customizer' ) . '</label></td>
-                </tr>';
+        // $out .= '<tr>
+        //         <th>' . __( 'Виджет участников сайта', 'mif-wp-customizer' ) . '</th>
+        //         <td><input type="checkbox"' . $chk['members-widget'] . ' value = "yes" name="members-widget" id="members-widget"></td>
+        //         <td><label for="members-widget">' . __( 'Разрешить использовать виджет участников сайта. Показывает аватрки участников в области виджетов.', 'mif-wp-customizer' ) . '</label></td>
+        //         </tr>';
         $out .= '<tr>
                 <th>' . __( 'Кнопка «Наверх»', 'mif-wp-customizer' ) . '</th>
                 <td><input type="checkbox"' . $chk['button-to-top'] . ' value = "yes" name="button-to-top" id="button-to-top"></td>
-                <td><label for="user_pass" for="button-to-top">' . __( 'Показывать кнопку «Наверх». Кнопка включается при пролистывании страницы вниз и позволяет быстро вернуться на начало.', 'mif-wp-customizer' ) . '</label></td>
+                <td><label for="button-to-top">' . __( 'Показывать кнопку «Наверх». Кнопка включается при пролистывании страницы вниз и позволяет быстро вернуться на начало.', 'mif-wp-customizer' ) . '</label></td>
+                </tr>';
+        $out .= '<tr>
+                <th>' . __( 'Верхняя панель', 'mif-wp-customizer' ) . '</th>
+                <td><input type="checkbox"' . $chk['disable-admin-bar'] . ' value = "yes" name="disable-admin-bar" id="disable-admin-bar"></td>
+                <td><label for="disable-admin-bar">' . __( 'Убрать верхнюю панель (админ-бар) для всех пользователей сайта.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
         $out .= '<tr><td colspan="3">';
         $out .= '<h2>' . __( 'Поведение сайта', 'mif-wp-customizer' ) . '</h2>';
@@ -71,12 +76,12 @@ class mif_wpc_console_settings_page {
         $out .= '<tr>
                 <th>' . __( 'Шорткоды', 'mif-wp-customizer' ) . '</th>
                 <td><input type="checkbox"' . $chk['mif-wpc-shortcodes'] . ' value = "yes" name="mif-wpc-shortcodes" id="mif-wpc-shortcodes"></td>
-                <td><label for="user_pass" for="mif-wpc-shortcodes">' . __( 'Разрешить использовать шорткоды (redirect).', 'mif-wp-customizer' ) . '</label></td>
+                <td><label for="mif-wpc-shortcodes">' . __( 'Разрешить использовать шорткоды (redirect).', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
         // $out .= '<tr>
         //         <th>' . __( 'MIME типы', 'mif-wp-customizer' ) . '</th>
         //         <td><input type="checkbox"' . $chk['mif-wpc-mime-types'] . ' value = "yes" name="mif-wpc-mime-types" id="mif-wpc-mime-types"></td>
-        //         <td><label for="user_pass" for="mif-wpc-mime-types">' . __( 'Разрешить добавление пользовательских MIME типов.', 'mif-wp-customizer' ) . '</label></td>
+        //         <td><label for="mif-wpc-mime-types">' . __( 'Разрешить добавление пользовательских MIME типов.', 'mif-wp-customizer' ) . '</label></td>
         //         </tr>';
 
         if ( is_multisite() ) {

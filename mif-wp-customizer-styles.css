@@ -2,10 +2,9 @@
 
 
 .button_to_top {
-    /*display: none; */
     z-index: 9999; 
     position: fixed; 
-    /*bottom: 2em; */
+    bottom: 2em; 
     top: 2em;
     right: 2em; 
     width: 3em; 
@@ -16,6 +15,7 @@
     transition-duration: 400ms;
     box-shadow: 0 0 2px rgba(0,0,0,0.3);
     cursor: default;
+    font-family: sans-serif;
 }
 
 .button_to_top.show {
@@ -24,7 +24,7 @@
 }
 
 .button_to_top i {
-	margin-top: 0.15em; 
+    margin-top: 6px;
     color: #fff;
 }
 
