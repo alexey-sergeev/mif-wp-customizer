@@ -19,10 +19,9 @@ include_once dirname( __FILE__ ) . '/inc/admin-settings-page.php';
 include_once dirname( __FILE__ ) . '/inc/join-to-multisite.php';
 include_once dirname( __FILE__ ) . '/inc/shortcodes.php';
 include_once dirname( __FILE__ ) . '/inc/disable-admin-bar.php';
-
 include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
-include_once dirname( __FILE__ ) . '/inc/members-widget.php';
 
+// include_once dirname( __FILE__ ) . '/inc/members-widget.php';
 // include_once dirname( __FILE__ ) . '/inc/mime-types.php';
 // include_once dirname( __FILE__ ) . '/inc/cyrillic-to-latin.php';
 
@@ -60,7 +59,7 @@ function get_mif_wpc_options()
                 'mif-wpc-mime-types' => true,
                 'login-logout-widget' => true,
                 'disable-admin-bar' => true,
-                'members-widget' => true,
+                // 'members-widget' => true,
                 'join-to-multisite-default-role' => 'subscriber',
                 'join-to-multisite-mode' => 'manual',
             );

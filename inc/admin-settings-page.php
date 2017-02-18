@@ -55,11 +55,11 @@ class mif_wpc_console_settings_page {
                 <td><input type="checkbox"' . $chk['login-logout-widget'] . ' value = "yes" name="login-logout-widget" id="login-logout-widget"></td>
                 <td><label for="login-logout-widget">' . __( 'Разрешить использовать виджет авторизации. В зависимости от текущего статуса авторизации пользователя виджет отображает форму авторизации, либо аватар и имя пользователя.', 'mif-wp-customizer' ) . '</label></td>
                 </tr>';
-        $out .= '<tr>
-                <th>' . __( 'Виджет участников сайта', 'mif-wp-customizer' ) . '</th>
-                <td><input type="checkbox"' . $chk['members-widget'] . ' value = "yes" name="members-widget" id="members-widget"></td>
-                <td><label for="members-widget">' . __( 'Разрешить использовать виджет участников сайта. Показывает аватрки участников в области виджетов.', 'mif-wp-customizer' ) . '</label></td>
-                </tr>';
+        // $out .= '<tr>
+        //         <th>' . __( 'Виджет участников сайта', 'mif-wp-customizer' ) . '</th>
+        //         <td><input type="checkbox"' . $chk['members-widget'] . ' value = "yes" name="members-widget" id="members-widget"></td>
+        //         <td><label for="members-widget">' . __( 'Разрешить использовать виджет участников сайта. Показывает аватрки участников в области виджетов.', 'mif-wp-customizer' ) . '</label></td>
+        //         </tr>';
         $out .= '<tr>
                 <th>' . __( 'Кнопка «Наверх»', 'mif-wp-customizer' ) . '</th>
                 <td><input type="checkbox"' . $chk['button-to-top'] . ' value = "yes" name="button-to-top" id="button-to-top"></td>
