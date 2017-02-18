@@ -45,30 +45,17 @@ class mif_wpc_members_widget extends WP_Widget {
 
         $out = '';
         
-		// $out .= '<p>';
-   		// $out .= get_num_queries() . ' - ';
-		// $out .= timer_stop(1) . ' - ';
-		// $out .= round(memory_get_usage()/1024/1024, 2);
-
         $out .= $before_widget;
 
 		$title = apply_filters( 'mif_wpc_members_widget_title', $data['title'] );
 
 		if ( ! empty( $title ) ) $out .= $before_title . $title . $after_title;
 
-		// $data['number'] = 16;
-		// $data['size'] = 50;
-		// $data['cache_expires'] = 300;
-		// $data['members_type'] = 'active';
 		$avatars = $this->get_avatars( $data );
 
         $out .= $avatars;
 
 		$out .= $after_widget;
-
-   		// $out .= get_num_queries() . ' - ';
-		// $out .= timer_stop(1) . ' - ';
-		// $out .= round(memory_get_usage()/1024/1024, 2);
 
         echo $out;
 
@@ -91,7 +78,8 @@ class mif_wpc_members_widget extends WP_Widget {
 		$cache_widget_avatars = get_option( 'cache_widget_avatars' );
 		$timestamp = absint( $cache_widget_avatars['timestamp'] );
 		$now = time();
-		
+
+
 		if ( ! $cache_widget_avatars || $now - $timestamp > $cache_expires ) {
 		
 			if ( is_active_buddypress() ) {
@@ -99,13 +87,16 @@ class mif_wpc_members_widget extends WP_Widget {
 
 				$limit = $number * 4;
 
+
 				$args = array(
 						'type' => $members_type,
 						'max' => $limit,
 						'per_page' => $limit,
-						'meta_key' => $wpdb->base_prefix . $blog_id . "_capabilities"
+						// 'meta_key' => $wpdb->base_prefix . $blog_id . "_capabilities"
 				);
 				
+                if ( ! is_main_site( $blog_id ) ) $args['meta_key'] = $wpdb->base_prefix . $blog_id . "_capabilities";
+
 				if ( bp_has_members( $args ) ) {
 
 					while ( bp_members() ) {

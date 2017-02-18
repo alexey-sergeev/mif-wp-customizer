@@ -1,10 +1,14 @@
 /* Настройка виджета пользователей */
 
-.members_widget img.avatar {
+.members_widget span.avatar {
+    display: inline-block;
     margin: 0 4px 8px 4px;
-    border: 3px solid #fff;
 }
 
+.members_widget span.avatar img {
+    border: 3px solid #fff;
+    float: left;
+}
 
 /* Настройка кнопки "Наверх" */
 
