@@ -1,7 +1,7 @@
 <?php
 
 //
-// Добавление пункта меню "Войти/Выйти"
+// Добавление пункта меню "Login/Logout"
 //
 //
 
@@ -19,7 +19,7 @@ if ( mif_wpc_options( 'login-logout-menu' ) )
 
 function mif_wpc_login_logout_menu_metabox_register() 
 {
-	add_meta_box( 'mif_wpc_llm', __( 'Войти/Выйти' ), 'mif_wpc_login_logout_menu_metabox_render', 'nav-menus', 'side', 'default' );
+	add_meta_box( 'mif_wpc_llm', __( 'Login/Logout' ), 'mif_wpc_login_logout_menu_metabox_render', 'nav-menus', 'side', 'default' );
 }
 
 
@@ -34,7 +34,7 @@ function mif_wpc_login_logout_menu_metabox_render( $object )
                                     'object_id' => 1,
                                     'menu_item_parent' => 0,
                                     'type' => 'login-logout-menu-type',
-                                    'title' => __( 'Войти/Выйти', 'mif-wp-customizer' ),
+                                    'title' => __( 'Login/Logout', 'mif-wpc' ),
                                     'url' => '',
                                     'target' => '',
                                     'attr_title' => '', 
@@ -54,7 +54,7 @@ function mif_wpc_login_logout_menu_metabox_render( $object )
 
 		<p class="button-controls">
 			<span class="list-controls">
-                <p><?php echo __( 'Ссылка «Войти» или «Выйти» в зависимости от текущего статуса авторизации пользователя', 'mif-wp-customizer' ) ?>
+                <p><?php echo __( '"Login" or "Logout" link depending on the current status of user authorization', 'mif-wpc' ) ?>
                 <p>
 				</span>
 			</span>
@@ -90,12 +90,12 @@ function mif_wpc_login_logout_menu_metabox_links( $items, $menu, $args )
         if ( is_user_logged_in() ) {
 
             $item->url = wp_logout_url();
-            $item->title = __( 'Выйти', 'mif-wp-customizer' );
+            $item->title = __( 'Logout', 'mif-wpc' );
 
         } else {
 
-            $item->url = wp_login_url();
-            $item->title = __( 'Войти', 'mif-wp-customizer' );
+            $item->url = wp_login_url() . '?redirect_to=' . get_permalink();
+            $item->title = __( 'Login', 'mif-wpc' );
 
         }
     
@@ -104,7 +104,6 @@ function mif_wpc_login_logout_menu_metabox_links( $items, $menu, $args )
     return $items;
 
 }
-
 
 
 

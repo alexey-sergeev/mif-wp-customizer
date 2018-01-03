@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-01-02 20:43+0300\n"
+"PO-Revision-Date: 2018-01-02 20:55+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 "
+"&& (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: inc\n"
+
+#: inc/admin-settings-page.php:21 inc/admin-settings-page.php:28
+msgid "WP Customizer Plugin configuration"
+msgstr "Настройка плагина WP Customizer"
+
+#: inc/admin-settings-page.php:21
+msgid "WP Customizer"
+msgstr ""
+
+#: inc/admin-settings-page.php:29
+msgid ""
+"MIF WP Customizer plugin adds some great features to your site. Here you can "
+"specify what exactly should be applied on your site."
+msgstr ""
+"Плагин MIF WP Customizer добавляет к вашему сайте несколько великолепных "
+"возможностей. Здесь вы можете указать, что именно надо применить на вашем сайте."
+
+#: inc/admin-settings-page.php:46
+msgid "Visual elements"
+msgstr "Визуальные элементы"
+
+#: inc/admin-settings-page.php:49
+msgid "Menu \"Login/Logout\""
+msgstr "Меню «Войти/Выйти»"
+
+#: inc/admin-settings-page.php:51
+msgid ""
+"Allow to use menu item \"Login/Logout\". The \"Login\" or \"Logout\" link is "
+"displayed in the menu depending on the current status of user authorization."
+msgstr ""
+"Разрешить использовать элемент меню «Войти/Выйти». В меню отображается ссылка "
+"«Войти» или «Выйти» в зависимости от текущего статуса авторизации пользователя."
+
+#: inc/admin-settings-page.php:54
+msgid "Authorization widget"
+msgstr "Виджет авторизации"
+
+#: inc/admin-settings-page.php:56
+msgid ""
+"Allow to use authorization widget. Widget displays either authorization form or "
+"avatar and username, depending on the current status of user authorization."
+msgstr ""
+"Разрешить использовать виджет авторизации. В зависимости от текущего статуса "
+"авторизации пользователя виджет отображает форму авторизации, либо аватар и имя "
+"пользователя."
+
+#: inc/admin-settings-page.php:64
+msgid "\"Up\" button"
+msgstr "Кнопка «Наверх»"
+
+#: inc/admin-settings-page.php:66
+msgid ""
+"Show the \"Up\" button. The button turns on when the page is scrolled down and "
+"allows you to quickly return to top."
+msgstr ""
+"Показывать кнопку «Наверх». Кнопка включается при пролистывании страницы вниз и "
+"позволяет быстро вернуться на начало."
+
+#: inc/admin-settings-page.php:69
+msgid "Toolbar"
+msgstr "Верхняя панель"
+
+#: inc/admin-settings-page.php:71
+msgid "Hide the toolbar (admin-bar) for all site users."
+msgstr "Убрать верхнюю панель (админ-бар) для всех пользователей сайта."
+
+#: inc/admin-settings-page.php:74
+msgid "Site behavior"
+msgstr "Поведение сайта"
+
+#: inc/admin-settings-page.php:77
+msgid "Shortcodes"
+msgstr "Шорткоды"
+
+#: inc/admin-settings-page.php:79
+msgid "Allow to use shortcodes (redirect)."
+msgstr "Разрешить использовать шорткоды (redirect)."
+
+#: inc/admin-settings-page.php:90
+msgid "New elements for WordPress Multisite"
+msgstr "Новые элементы для WordPress Multisite"
+
+#: inc/admin-settings-page.php:93 inc/join-to-multisite.php:32
+msgid "Site member’s status"
+msgstr "Статус участника сайта"
+
+#: inc/admin-settings-page.php:95
+msgid ""
+"Allow to use member status widget. Depending on configuration, this widget will "
+"display the current status or allow to change it."
+msgstr ""
+"Разрешить использовать виджет статуса участника. В зависимости от настроек этот "
+"виджет будет отображать текущий статус или позволять его изменять."
+
+#: inc/admin-settings-page.php:96
+msgid "Don’t allow to change status (view only)"
+msgstr "Не разрешать изменять статус (только просмотр)"
+
+#: inc/admin-settings-page.php:97
+msgid "Manual status change (\"Become a member\", \"Leave site\" buttons)"
+msgstr "Ручное изменение статуса (кнопки \"Стать участником\", \"Покинуть сайт\")"
+
+#: inc/admin-settings-page.php:98
+msgid ""
+"Automatic and manual status change (buttons and automatic registration as "
+"member when posting comments or posts)"
+msgstr ""
+"Автоматическое и ручное изменение статуса (кнопки, а также автоматическая "
+"запись участником при размещении комментариев или записей)"
+
+#: inc/admin-settings-page.php:99
+msgid "Default member’s status"
+msgstr "Статус пользователя по умолчанию"
+
+#: inc/admin-settings-page.php:108
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: inc/admin-settings-page.php:120
+msgid "Authorization error"
+msgstr "Ошибка авторизации"
+
+#: inc/admin-settings-page.php:134
+msgid "Changes saved"
+msgstr "Изменения сохранены"
+
+#: inc/join-to-multisite.php:29
+msgid "Displays the site member status form"
+msgstr "Отображает форму статуса участника сайте"
+
+#: inc/join-to-multisite.php:67
+msgid "Leave site"
+msgstr "Покинуть сайт"
+
+#: inc/join-to-multisite.php:67
+msgid "Become a member"
+msgstr "Стать участником"
+
+#: inc/join-to-multisite.php:68
+msgid "You are a site member"
+msgstr "Вы являетесь участником сайта"
+
+#: inc/join-to-multisite.php:68
+msgid "You are not a site member"
+msgstr "\"Вы не являетесь участником сайт"
+
+#: inc/join-to-multisite.php:93
+msgid "Please login"
+msgstr "Войдите на сайт"
+
+#: inc/join-to-multisite.php:94
+msgid "or"
+msgstr "или"
+
+#: inc/join-to-multisite.php:95
+msgid "Register again"
+msgstr "пройдите новую регистрацию"
+
+#: inc/join-to-multisite.php:126 inc/login-logout-widget.php:135
+msgid "Title"
+msgstr "Заголовок"
+
+#: inc/join-to-multisite.php:129
+msgid ""
+"The behavior of this element depends on WP Customizer Plugin settings. Check "
+"these settings to get the correct result."
+msgstr ""
+"Поведение этого элемента зависит от настроек плагина WP Customizer. Проверьте "
+"эти настройки, чтобы получить правильный результат."
+
+#: inc/join-to-multisite.php:130
+msgid "Settings"
+msgstr "Настройки"
+
+#: inc/login-logout-menu.php:22 inc/login-logout-menu.php:37
+msgid "Login/Logout"
+msgstr "Войти/Выйти"
+
+#: inc/login-logout-menu.php:57
+msgid ""
+"\"Login\" or \"Logout\" link depending on the current status of user "
+"authorization"
+msgstr ""
+"Ссылка «Войти» или «Выйти» в зависимости от текущего статуса авторизации "
+"пользователя"
+
+#: inc/login-logout-menu.php:93 inc/login-logout-widget.php:70
+msgid "Logout"
+msgstr "Выйти"
+
+#: inc/login-logout-menu.php:98 inc/login-logout-widget.php:78
+#: inc/login-logout-widget.php:93
+msgid "Login"
+msgstr "Войти"
+
+#: inc/login-logout-widget.php:29
+msgid "Displays the Login form"
+msgstr "Отображает форму входа на сайт"
+
+#: inc/login-logout-widget.php:32
+msgid "Login form"
+msgstr "Форма входа на сайт"
+
+#: inc/login-logout-widget.php:83
+msgid "Password"
+msgstr "Пароль"
+
+#: inc/login-logout-widget.php:89
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: inc/login-logout-widget.php:98
+msgid "Create new account"
+msgstr "Создать новую учётную запись"
+
+#: inc/login-logout-widget.php:99
+msgid "Forgot your password?"
+msgstr "Забыли пароль?"

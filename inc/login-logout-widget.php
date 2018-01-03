@@ -1,7 +1,7 @@
 <?php
 
 //
-// Виджет "Войти/Выйти"
+// Виджет "Login/Logout"
 //
 //
 
@@ -26,10 +26,10 @@ class mif_wpc_user_login_widget extends WP_Widget {
     {
 		$widget_options = apply_filters( 'mif_wpc_login_widget_options', array(
 			'classname'   =>    'user_login_widget',
-			'description' => __( 'Отображает форму входа на сайт', 'mif-wp-customizer' )
+			'description' => __( 'Displays the Login form', 'mif-wpc' )
 		) );
 
-		parent::__construct( false, __( 'Форма входа на сайт', 'mif-wp-customizer' ), $widget_options );
+		parent::__construct( false, __( 'Login form', 'mif-wpc' ), $widget_options );
 	}
 
 
@@ -67,7 +67,7 @@ class mif_wpc_user_login_widget extends WP_Widget {
                     <a href="' . $user_link . '">' . $avatar . '</a>
                     <div>
                     <h4><a href="' . $user_link . '" class="username">' . $user_name . '</a></h4>
-                    <a href="' . wp_logout_url( $url ) . '" class="logout">' . __( 'Выйти', 'mif-wp-customizer' ) . ' &rarr;</a>
+                    <a href="' . wp_logout_url( $url ) . '" class="logout">' . __( 'Logout', 'mif-wpc' ) . ' &rarr;</a>
                     </div> 
                     </div>';
 
@@ -75,28 +75,28 @@ class mif_wpc_user_login_widget extends WP_Widget {
 
             $out .= '<form method="post" action="' . wp_login_url() . '" class="mif_wpc_user_login_widget">
                         <div class="username">
-                            <label for="user_login">Имя пользователя:</label>
+                            <label for="user_login">' . __( 'Login', 'mif-wpc' ) . ':</label>
                             <p><input type="text" name="log" value="" size="20" id="user_login" />
                         </div>
 
                         <div class="password">
-                            <label for="user_pass">Пароль:</label>
+                            <label for="user_pass">' . __( 'Password', 'mif-wpc' ) . ':</label>
                             <p><input type="password" name="pwd" value="" size="20" id="user_pass" />
                         </div>
                 
                         <div class="rememberme">
                             <input type="checkbox" name="rememberme" value="forever" id="rememberme" />
-                            <label for="rememberme">Запомнить меня</label>
+                            <label for="rememberme">' . __( 'Remember me', 'mif-wpc' ) . '</label>
                         </div>
                 
                         <div class="submit-wrapper">
-                            <p><button type="submit" name="user-submit" id="user-submit" class="button submit user-submit">' . __( 'Войти', 'mif-wp-customizer' ) . '</button>
+                            <p><button type="submit" name="user-submit" id="user-submit" class="button submit user-submit">' . __( 'Login', 'mif-wpc' ) . '</button>
                             <input type="hidden" name="user-cookie" value="1">
                             <input type="hidden" id="redirect_to" name="redirect_to" value="' . get_permalink() . '">
                         </div>
 
-                        <p><a href="' . wp_registration_url() . '">' . __( 'Создать новую учётную запись', 'mif-wp-customizer' ) . '</a><br />
-                        <a href="' . wp_lostpassword_url() . '">' . __( 'Забыли пароль?', 'mif-wp-customizer' ) . '</a>
+                        <p><a href="' . wp_registration_url() . '">' . __( 'Create new account', 'mif-wpc' ) . '</a><br />
+                        <a href="' . wp_lostpassword_url() . '">' . __( 'Forgot your password?', 'mif-wpc' ) . '</a>
 
 
                     </form>';
@@ -132,7 +132,7 @@ class mif_wpc_user_login_widget extends WP_Widget {
 
         $out = '';
 
-        $out .= '<p><label for="' . $this->get_field_id( 'title' ) . '">' . __( 'Заголовок', 'mif-wp-customizer' ) . '
+        $out .= '<p><label for="' . $this->get_field_id( 'title' ) . '">' . __( 'Title', 'mif-wpc' ) . '
                 <input class="widefat" id="' . $this->get_field_id( 'title' ) . ' " name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . $title . '" /></label>';
 
         echo $out;    

@@ -21,11 +21,10 @@ include_once dirname( __FILE__ ) . '/inc/shortcodes.php';
 include_once dirname( __FILE__ ) . '/inc/disable-admin-bar.php';
 include_once dirname( __FILE__ ) . '/inc/login-logout-widget.php';
 
-// include_once dirname( __FILE__ ) . '/inc/members-widget.php';
-// include_once dirname( __FILE__ ) . '/inc/mime-types.php';
-// include_once dirname( __FILE__ ) . '/inc/cyrillic-to-latin.php';
 
+// Подключение языкового файла
 
+load_plugin_textdomain( 'mif-wpc', false, basename( dirname( __FILE__ ) ) . '/lang' );
 
 
 
@@ -85,8 +84,8 @@ add_action( 'wp_enqueue_scripts', 'mif_wp_customizer_styles' );
 
 function mif_wp_customizer_styles() 
 {
-	wp_register_style( 'mif-wp-customizer-styles', plugins_url( 'mif-wp-customizer-styles.css', __FILE__ ) );
-	wp_enqueue_style( 'mif-wp-customizer-styles' );
+	wp_register_style( 'mif-wpc-styles', plugins_url( 'mif-wpc-styles.css', __FILE__ ) );
+	wp_enqueue_style( 'mif-wpc-styles' );
 
 	wp_register_style( 'font-awesome', plugins_url( '/css/font-awesome.min.css', __FILE__ ) );
 	wp_enqueue_style( 'font-awesome' );

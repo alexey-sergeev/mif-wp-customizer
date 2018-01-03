@@ -10,7 +10,7 @@ jQuery( document ).ready( function( $ ) {
 
 	button_to_top.click( function( event ) {
 		event.preventDefault();
-		$( 'body' ).animate({ scrollTop: 0 }, 600 );
+		$( 'html, body' ).animate({ scrollTop: 0 }, 600 );
 	});
 
 

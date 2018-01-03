@@ -1,7 +1,7 @@
 <?php
 
 //
-// Стать участником сайта (мультисайт)
+// Become a member сайта (мультисайт)
 //
 //
 
@@ -26,10 +26,10 @@ class mif_wpc_join_to_multisite_widget extends WP_Widget {
     {
 		$widget_options = apply_filters( 'mif_wpc_join_to_multisite_widget_options', array(
 			'classname' => 'join_to_multisite_widget',
-			'description' => __( 'Отображает форму статуса участника сайте', 'mif-wp-customizer' )
+			'description' => __( 'Displays the site member status form', 'mif-wpc' )
 		) );
 
-		parent::__construct( false, __( 'Статус участника сайта', 'mif-wp-customizer' ), $widget_options );
+		parent::__construct( false, __( 'Site member’s status', 'mif-wpc' ), $widget_options );
 	}
 
 
@@ -64,12 +64,12 @@ class mif_wpc_join_to_multisite_widget extends WP_Widget {
             if ( empty( $user_link ) ) $user_link = get_option('siteurl') . '/wp-admin/profile.php';
 
             $action_value = ( is_user_member_of_blog() ) ? 'unjoin' : 'join';
-            $submit_value = ( is_user_member_of_blog() ) ? __( 'Покинуть сайт', 'mif-wp-customizer' ) : __( 'Стать участником', 'mif-wp-customizer' );
-            $comment = ( is_user_member_of_blog() ) ? __( 'Вы являетесь участником сайта', 'mif-wp-customizer' ) : __( 'Вы не являетесь участником сайта', 'mif-wp-customizer' );
+            $submit_value = ( is_user_member_of_blog() ) ? __( 'Leave site', 'mif-wpc' ) : __( 'Become a member', 'mif-wpc' );
+            $comment = ( is_user_member_of_blog() ) ? __( 'You are a site member', 'mif-wpc' ) : __( 'You are not a site member', 'mif-wpc' );
 
             $form = '<p><form method="POST">
                     <input type="hidden" name="action" value="' . $action_value . '">
-                    <input type="submit" name="join-to-multisite" value="' . $submit_value . '">
+                    <input type="submit" name="join-to-multisite" value="' . $submit_value . '" class="' . $action_value . '">
                     ' . wp_nonce_field( "mif-wpc-join-to-multisite-nonce", "_wpnonce", true, false ) . '
                     </form>';
 
@@ -90,9 +90,9 @@ class mif_wpc_join_to_multisite_widget extends WP_Widget {
             // $url = get_site_url() . $_SERVER['REQUEST_URI'];
             $url = ( is_page() || is_single() ) ? get_permalink() : home_url();
 
-            $out .= '<a href="' . wp_login_url( $url ) . '">' . __( 'Войдите на сайт', 'mif-wp-customizer' ) . '</a>';
-            $out .= ' ' . __( 'или', 'mif-wp-customizer' ) . ' ';
-            $out .= '<a href="' . wp_registration_url() . '">' . __( 'пройдите новую регистрацию', 'mif-wp-customizer' ) . '</a>.';
+            $out .= '<a href="' . wp_login_url( $url ) . '">' . __( 'Please login', 'mif-wpc' ) . '</a>';
+            $out .= ' ' . __( 'or', 'mif-wpc' ) . ' ';
+            $out .= '<a href="' . wp_registration_url() . '">' . __( 'Register again', 'mif-wpc' ) . '</a>.';
 
         }
 
@@ -123,11 +123,11 @@ class mif_wpc_join_to_multisite_widget extends WP_Widget {
 
         $out = '';
 
-        $out .= '<p><label for="' . $this->get_field_id( 'title' ) . '">' . __( 'Заголовок', 'mif-wp-customizer' ) . '
+        $out .= '<p><label for="' . $this->get_field_id( 'title' ) . '">' . __( 'Title', 'mif-wpc' ) . '
                 <input class="widefat" id="' . $this->get_field_id( 'title' ) . ' " name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . $title . '" /></label>';
 
-        $out .= '<p>' . __( 'Поведение этого элемента зависит от настроек плагина WP Customizer. Проверьте эти настройки, чтобы получить правильный результат.', 'mif-wp-customizer' );
-        $out .= '<p><a href="' . get_admin_url() . 'options-general.php?page=mif-wp-customizer">' . __( 'Настройки', 'mif-wp-customizer' ) . '</a>';
+        $out .= '<p>' . __( 'The behavior of this element depends on WP Customizer Plugin settings. Check these settings to get the correct result.', 'mif-wpc' );
+        $out .= '<p><a href="' . get_admin_url() . 'options-general.php?page=mif-wp-customizer">' . __( 'Settings', 'mif-wpc' ) . '</a>';
 
         echo $out;    
     }
@@ -136,7 +136,7 @@ class mif_wpc_join_to_multisite_widget extends WP_Widget {
 
 
 //
-// Обработка нажатия кнопки "Стать участником", "Покинуть сайт"
+// Обработка нажатия кнопки "Become a member", "Leave site"
 //
 //
 

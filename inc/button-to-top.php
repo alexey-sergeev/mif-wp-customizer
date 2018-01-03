@@ -14,6 +14,7 @@ if ( mif_wpc_options( 'button-to-top' ) )
 
 function mif_wpc_button_to_top()  
 {  
+    if ( is_admin() ) return;
 
     wp_register_script( 'mif-wpc-button-to-top', plugins_url( '../js/button-to-top.js', __FILE__ ) );
     wp_enqueue_script( 'mif-wpc-button-to-top' );
