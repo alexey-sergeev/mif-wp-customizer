@@ -1,15 +1,16 @@
 <?php
 /*
  * Plugin Name: MIF WP Customizer
+ * Description: Плагин дополнительной настройки WordPress для создания сайта социальной сети.
  * Plugin URI:  https://github.com/alexey-sergeev/mif-bp-customizer
  * Author:      Alexey Sergeev
  * Author URI:  https://github.com/alexey-sergeev
- * License:     MIT License
- * Description: Плагин WordPress для тонкой настройки сайтов.
- * Version:     1.0.1
- * Text Domain: mif-wp-customizer
+ * Version:     1.0.0
+ * Text Domain: mif-wpc
  * Domain Path: /lang/
- */
+ * License:     GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
 
 defined( 'ABSPATH' ) || exit;
 

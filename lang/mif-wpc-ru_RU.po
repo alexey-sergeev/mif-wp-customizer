@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-01-02 20:43+0300\n"
-"PO-Revision-Date: 2018-01-02 20:55+0300\n"
+"PO-Revision-Date: 2018-01-15 19:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: inc/admin-settings-page.php:29
 msgid ""
-"MIF WP Customizer plugin adds some great features to your site. Here you can "
-"specify what exactly should be applied on your site."
+"MIF WP Customizer plugin adds new features to your site. Here you can specify "
+"what exactly should be applied on your site."
 msgstr ""
-"Плагин MIF WP Customizer добавляет к вашему сайте несколько великолепных "
-"возможностей. Здесь вы можете указать, что именно надо применить на вашем сайте."
+"Плагин MIF WP Customizer добавляет к вашему сайте несколько возможностей. Здесь "
+"вы можете указать, что именно надо применить на вашем сайте."
 
 #: inc/admin-settings-page.php:46
 msgid "Visual elements"
@@ -160,7 +160,7 @@ msgstr "Вы являетесь участником сайта"
 
 #: inc/join-to-multisite.php:68
 msgid "You are not a site member"
-msgstr "\"Вы не являетесь участником сайт"
+msgstr "Вы не являетесь участником сайта"
 
 #: inc/join-to-multisite.php:93
 msgid "Please login"

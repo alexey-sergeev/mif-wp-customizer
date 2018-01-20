@@ -19,16 +19,21 @@ class mif_wpc_console_settings_page {
     function register_menu_page()
     {
         add_options_page( __( 'WP Customizer Plugin configuration', 'mif-wpc' ), __( 'WP Customizer', 'mif-wpc' ), 'manage_options', 'mif-wpc', array( $this, 'page' ) );
-        wp_register_style( 'mif-wp-customizer-styles', plugins_url( '../mif-wp-customizer-styles.css', __FILE__ ) );
-        wp_enqueue_style( 'mif-wp-customizer-styles' );
+        wp_register_style( 'mif-wpc-styles', plugins_url( '../mif-wpc-styles.css', __FILE__ ) );
+        wp_enqueue_style( 'mif-wpc-styles' );
+
+        wp_register_style( 'font-awesome', plugins_url( '../css/font-awesome.min.css', __FILE__ ) );
+        wp_enqueue_style( 'font-awesome' );
     }
 
     function page()
     {
-        $out = '<h1>' . __( 'WP Customizer Plugin configuration', 'mif-wpc' ) . '</h1>';
-        $out .= '<p>' . __( 'MIF WP Customizer plugin adds some great features to your site. Here you can specify what exactly should be applied on your site.', 'mif-wpc' );
-        $out .= '<p>&nbsp;';
-      
+        $out = '';
+        
+        $out .= '<h1>' . __( 'WP Customizer Plugin configuration', 'mif-wpc' ) . '</h1>';
+        
+        $out .= '<p>' . __( 'MIF WP Customizer plugin adds new features to your site. Here you can specify what exactly should be applied on your site.', 'mif-wpc' );
+
         $out .= $this->update_mif_wpc_options();
 
         $args = get_mif_wpc_options();
@@ -55,11 +60,6 @@ class mif_wpc_console_settings_page {
                 <td><input type="checkbox"' . $chk['login-logout-widget'] . ' value = "yes" name="login-logout-widget" id="login-logout-widget"></td>
                 <td><label for="login-logout-widget">' . __( 'Allow to use authorization widget. Widget displays either authorization form or avatar and username, depending on the current status of user authorization.', 'mif-wpc' ) . '</label></td>
                 </tr>';
-        // $out .= '<tr>
-        //         <th>' . __( 'Site members widget', 'mif-wpc' ) . '</th>
-        //         <td><input type="checkbox"' . $chk['members-widget'] . ' value = "yes" name="members-widget" id="members-widget"></td>
-        //         <td><label for="members-widget">' . __( 'Allow to use site member widget. Displays members’ avatars in the widget area.', 'mif-wpc' ) . '</label></td>
-        //         </tr>';
         $out .= '<tr>
                 <th>' . __( '"Up" button', 'mif-wpc' ) . '</th>
                 <td><input type="checkbox"' . $chk['button-to-top'] . ' value = "yes" name="button-to-top" id="button-to-top"></td>
@@ -78,11 +78,6 @@ class mif_wpc_console_settings_page {
                 <td><input type="checkbox"' . $chk['mif-wpc-shortcodes'] . ' value = "yes" name="mif-wpc-shortcodes" id="mif-wpc-shortcodes"></td>
                 <td><label for="mif-wpc-shortcodes">' . __( 'Allow to use shortcodes (redirect).', 'mif-wpc' ) . '</label></td>
                 </tr>';
-        // $out .= '<tr>
-        //         <th>' . __( 'MIME типы', 'mif-wpc' ) . '</th>
-        //         <td><input type="checkbox"' . $chk['mif-wpc-mime-types'] . ' value = "yes" name="mif-wpc-mime-types" id="mif-wpc-mime-types"></td>
-        //         <td><label for="mif-wpc-mime-types">' . __( 'Allow to add user MIME types.', 'mif-wpc' ) . '</label></td>
-        //         </tr>';
 
         if ( is_multisite() ) {
 
@@ -107,12 +102,31 @@ class mif_wpc_console_settings_page {
         $out .= wp_nonce_field( "mif-wpc-admin-settings-page-nonce", "_wpnonce", true, false );
         $out .= '<p><input type="submit" class="button button-primary" name="update-mif-wpc-settings" value="' . __( 'Save changes', 'mif-wpc' ) . '">';
         $out .= '</td></tr>';
-
+        
         $out .= '</table>';
         $out .= '</form>';
-
+        
+        $out .= $this->donate();
+          
         echo $out;
     }
+    
+    
+    function donate()
+    {
+        $out = '';
+        
+        $out .= '<p>&nbsp;<p><strong>' . __( 'You can help make this plugin better', 'mif-wpc' ) . '</strong></p>';
+        $out .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="94EGBV7KSTBHE">
+            <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
+            </form>';
+
+        return $out;
+    }
+
 
     function update_mif_wpc_options()
     {
