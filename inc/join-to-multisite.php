@@ -155,10 +155,36 @@ function mif_wpc_join_to_multisite_action()
 
     if ( $args['join-to-multisite-mode'] == 'none' ) return;
 
-    $role = $args['join-to-multisite-default-role'];
+    $meta_key = '_members_role_' . $blog_id;
+    
+    if ( $_POST['action'] == 'join' ) {
+        
+        $role = $args['join-to-multisite-default-role'];
 
-    if ( $_POST['action'] == 'join' ) add_user_to_blog( $blog_id, $current_user->ID, $role );
-    if ( $_POST['action'] == 'unjoin' ) remove_user_from_blog( $current_user->ID, $blog_id );
+        $old_role = get_user_meta( $current_user->ID, $meta_key, true );
+
+        if ( $old_role ) {
+
+            $role = $old_role;
+            delete_user_meta( $current_user->ID, $meta_key );
+
+        }
+
+        add_user_to_blog( $blog_id, $current_user->ID, $role );
+
+    }
+
+    if ( $_POST['action'] == 'unjoin' ) {
+
+        $user = get_userdata( $current_user->ID );
+        $roles = array_intersect( array_values( $user->roles ), array_keys( wp_roles()->roles ) );
+        $role  = reset( $roles );
+        
+        if ( ! empty( $role ) ) update_user_meta( $current_user->ID, $meta_key, $role );
+
+        remove_user_from_blog( $current_user->ID, $blog_id );
+
+    }
    
 }
 

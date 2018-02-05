@@ -2,7 +2,7 @@
 Tags: multisite, member, login, adminbar, redirect, social network, buddypress
 Requires at least: 4.8
 Tested up to: 4.9.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,10 @@ tasks.
 9. Displaying posts for site members in the activity feed of BuddyPress
 
 == Changelog ==
+
+= 1.0.1 =
+
+* "Become a member of the site" - remembers the role if you leave the site, and then again become a member
 
 = 1.0.0 =
 

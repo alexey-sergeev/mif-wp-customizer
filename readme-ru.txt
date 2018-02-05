@@ -2,7 +2,7 @@
 Tags: multisite, member, login, adminbar, redirect, social network, buddypress
 Requires at least: 4.8
 Tested up to: 4.9.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 9. Отображение записей для участников сайта в ленте активновти BuddyPress
 
 == Changelog ==
+
+= 1.0.1 =
+
+* "Стать участником сайта" - запоминает роль если покинуть сайт, а потом снова стать его участником
 
 = 1.0.0 =
 
