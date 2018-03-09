@@ -203,10 +203,13 @@ function mif_wpc_join_to_multisite_automatic()
 {
     global $current_user, $blog_id;
     if ( ! $current_user ) return;
+    if ( is_user_member_of_blog() ) return;
 
     $args = get_mif_wpc_options();
 
     if ( $args['join-to-multisite-mode'] != 'automatic' ) return;
+
+    $userdata = get_userdata( $current_user->ID );
 
     $role = $args['join-to-multisite-default-role'];
     add_user_to_blog( $blog_id, $current_user->ID, $role );

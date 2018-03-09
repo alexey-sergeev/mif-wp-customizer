@@ -55,3 +55,6 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 * первая публичная версия плагина
 
+= 1.0.1 =
+
+* исправлена ошибка в join to multisite (automatic)

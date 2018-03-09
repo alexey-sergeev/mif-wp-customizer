@@ -55,3 +55,6 @@ tasks.
 
 * first public plugin version
 
+= 1.0.1 =
+
+* fix join to multisite (automatic)
