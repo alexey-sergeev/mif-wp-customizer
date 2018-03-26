@@ -130,7 +130,7 @@ class mif_wpc_console_settings_page {
 
     function update_mif_wpc_options()
     {
-        if ( ! $_POST['update-mif-wpc-settings'] ) return;
+        if ( empty( $_POST['update-mif-wpc-settings'] ) ) return;
         if ( ! wp_verify_nonce( $_POST['_wpnonce'], "mif-wpc-admin-settings-page-nonce" ) ) return '<div class="err">' . __( 'Authorization error', 'mif-wpc' ) . '</div>';
 
         $args = get_mif_wpc_options();

@@ -1,7 +1,7 @@
 === MIF WP Customizer ===
 Tags: multisite, member, login, adminbar, redirect, social network, buddypress
 Requires at least: 4.8
-Tested up to: 4.9.1
+Tested up to: 4.9.4
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,11 +50,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 = 1.0.1 =
 
 * "Стать участником сайта" - запоминает роль если покинуть сайт, а потом снова стать его участником
+* исправлена ошибка в join to multisite (automatic)
+* исправлена ошибка на странице настройки плагина
 
 = 1.0.0 =
 
 * первая публичная версия плагина
 
-= 1.0.1 =
 
-* исправлена ошибка в join to multisite (automatic)
