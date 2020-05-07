@@ -89,7 +89,7 @@ function mif_wpc_login_logout_menu_metabox_links( $items, $menu, $args )
         
         if ( is_user_logged_in() ) {
 
-            $item->url = wp_logout_url();
+            $item->url = wp_logout_url( home_url() );
             $item->title = __( 'Logout', 'mif-wpc' );
 
         } else {
